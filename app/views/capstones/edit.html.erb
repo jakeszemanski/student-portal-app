@@ -1,0 +1,12 @@
+<h1>Edit capstone</h1>
+<%= form_tag "/capstones/#{@capstone['id']}", method: :patch do %>
+  <div>
+    <%= label_tag :form_photo %>
+    <%= text_field_tag :form_photo, @capstone["photo"] %>
+  </div>
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @capstone["description"] %>
+  
+  <%= submit_tag "Update capstone" %>
+<% end %>
