@@ -1,1 +1,27 @@
-edit.html.erb
+<%= form_tag "/students/resumes/#{@students.id}", method: :patch do %>
+  <!-- write an each loop for experiences -->
+
+  <div class="form-group">
+  <%= label_tag :start_date, 'Enter a start date: ' %>
+  <%= text_field_tag :start_date, @experiences.start_date, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+  <%= label_tag :end_date, 'Enter end date: ' %>
+  <%= text_field_tag :end_date, @experiences.end_date, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :job_title, 'Enter a job title: ' %>
+  <%= text_field_tag :job_title, @experiences.job_title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :company_name, 'Enter company name: ' %>
+  <%= text_field_tag :company_name, @experiences.company_name, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+  <%= label_tag :details, 'Enter details: ' %>
+  <%= text_field_tag :details, @experiences.details, class: 'form-control' %>
+  </div>
+  <div>
+  <%= submit_tag 'Submit product!' %>
+  </div>
+  <% end %>
