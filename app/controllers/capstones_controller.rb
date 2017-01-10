@@ -13,7 +13,7 @@ class CapstonesController < ApplicationController
     def update
      @capstone = Unirest.patch(#{params[:id]}",
        parameters: {
-         screenshot: params[:screenshot],
+         photo: params[:photo],
          description: params[:description],
         
        }
