@@ -6,9 +6,16 @@ class ExperiencesController < ApplicationController
   end
 
   def update
-    # @student = Unirest.patch(
-    #   "API",
-    #   parameters: {
-    #     student[experience]["start_time"]}).body
+    @experience = Unirest.patch(
+      "API",
+      parameters: {
+        start_time: params[:start_time],
+        end_time: params[:end_time],
+        job_title: params[:job_title],
+        company_name: params[:company_name],
+        details: params[:details]
+        }
+        ).body
+    redirect_to "/students/resume/#{session[:id]}"
   end
 end
