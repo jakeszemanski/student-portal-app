@@ -1,13 +1,13 @@
 class ExperiencesController < ApplicationController
 
   def edit
-    @experiences = Unirest.get("A P I", {experiences["student_id"]=> session[:id]}).body
+    @experiences = Unirest.get("https://desolate-island-36210.herokuapp.com/api/v1/students/#{session[:id]}/experiences").body
     render 'edit.html.erb'
   end
 
   def update
     @experience = Unirest.patch(
-      "API",
+      "https://desolate-island-36210.herokuapp.com/api/v1/experiences/#{params[:id]}",
       parameters: {
         start_time: params[:start_time],
         end_time: params[:end_time],
