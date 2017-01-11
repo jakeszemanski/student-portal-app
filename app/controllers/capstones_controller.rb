@@ -9,15 +9,18 @@ class CapstonesController < ApplicationController
     render 'edit.html.erb'
   end
 
-  def update
-    @capstone = Unirest.patch(
-    #{params[:id]}",
-    parameters: {
-       photo: params[:photo],
-       description: params[:description],
-      
-     }
-   ).body
-   redirect_to "/capstone/#{@capstone['id']}"
+
+    def update
+     @capstone = Unirest.patch(#{params[:id]}",
+       parameters: {
+         name: params[:sam],
+         description: params[:d],
+         url: params[:d], student_id: params[:d]
+        
+       }
+     ).body
+     redirect_to "/capstone/#{@capstone['id']}"
+   end
+
   end
-end
+
