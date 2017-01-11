@@ -1,29 +1,27 @@
- <%= form_tag "/students/educations/#{@students.id}", method: :patch do %>
-  <!-- write an each loop for experiences -->
+<% @educations.each do |education| %>
+<%= form_tag "/api/v1/educations/#{education.id}", method: :patch do %>
 
   <div class="form-group">
   <%= label_tag :start_date, 'Enter a start date: ' %>
-  <%= text_field_tag :start_date, @experiences.start_date, class: 'form-control' %>
+  <%= text_field_tag :start_date, @educations.start_date, class: 'form-control' %>
   </div>
    <div class="form-group">
   <%= label_tag :end_date, 'Enter end date: ' %>
-  <%= text_field_tag :end_date, @experiences.end_date, class: 'form-control' %>
+  <%= text_field_tag :end_date, @educations.end_date, class: 'form-control' %>
   </div>
   <div class="form-group">
-  <%= label_tag :job_title, 'Enter a job title: ' %>
-  <%= text_field_tag :job_title, @experiences.job_title, class: 'form-control' %>
+  <%= label_tag :degree, 'Enter a degree: ' %>
+  <%= text_field_tag :degree, @educations.degree, class: 'form-control' %>
   </div>
   <div class="form-group">
-  <%= label_tag :company_name, 'Enter company name: ' %>
-  <%= text_field_tag :company_name, @experiences.company_name, class: 'form-control' %>
+  <%= label_tag :university_name, 'Enter university name: ' %>
+  <%= text_field_tag :university_name, @educations.company_name, class: 'form-control' %>
   </div>
    <div class="form-group">
   <%= label_tag :details, 'Enter details: ' %>
-  <%= text_field_tag :details, @experiences.details, class: 'form-control' %>
+  <%= text_field_tag :details, @educations.details, class: 'form-control' %>
   </div>
   <div>
-  <%= submit_tag 'Submit product!' %>
+  <%= submit_tag 'Submit education!' %>
   </div>
-  <% end %>
-
-
+<% end %>
