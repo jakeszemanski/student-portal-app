@@ -1,6 +1,5 @@
-<%= form_tag "/students/experiences/#{@students.id}", method: :patch do %>
-
-  <% @experiences.each do |experience| %>
+<% @experiences.each do |experience| %>
+<%= form_tag "/api/v1/experiences/#{experience.id}", method: :patch do %>
   <div class="form-group">
   <%= label_tag :start_date, 'Enter a start date: ' %>
   <%= text_field_tag :start_date, experience.start_date, class: 'form-control' %>
