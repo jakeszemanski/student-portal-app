@@ -1,1 +1,26 @@
-resume show
+<h1>Resume</h1>
+<h3>Experiences</h3>
+<% @experiences.each do |experience| %>
+  <p><%= experience.start_date %> - <%= experience.end_date %></p>
+  <h5><%= experience.job_title %></h5>
+  <h6><%= experience.company_name %></h6>
+  <p><%= experience.details %></p>
+<% end %>
+
+<h3>Education</h3>
+<% @educations.each do |education| %>
+  <p><%= education.start_date %></p>
+  <p><%= education.end_date %></p>
+  <p><%= education.degree %></p>
+  <p><%= education.university_name %></p>
+  <p><%= education.details %></p>
+<% end %>
+
+<h3>Skills</h3>
+<% @skills.each do |skill| %>
+<ul>
+  <li><p><%= skill.skill_name %></p></li>
+</ul>
+<% end %>
+
+
