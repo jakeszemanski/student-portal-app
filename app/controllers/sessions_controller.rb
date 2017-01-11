@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @student = Unirest.get "API", {student["email"]=> session[:email]}
+    @student = Unirest.get "API", {student["email"]=> session[:email]}.body
     session[:student_id] = @student.id
     flash[:success] = 'You have successfully logged in!'
     redirect_to '/'
@@ -16,3 +16,4 @@ class SessionsController < ApplicationController
     redirect_to '/login'
   end
 end
+

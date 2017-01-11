@@ -1,6 +1,7 @@
 class CapstonesController < ApplicationController
   def show
-    @capstone = Unirest.get("//#{params[:id]}").body
+    @capstone = {name: "sam", description: "d", url: "C", student_id: 5}
+    # @capstone = Unirest.get("//#{params[:id]}").body
     render 'show.html.erb'
   end
   def edit 
@@ -9,15 +10,20 @@ class CapstonesController < ApplicationController
     render 'edit.html.erb'
   end
 
-  def update
-    @capstone = Unirest.patch(
-    #{params[:id]}",
-    parameters: {
-       photo: params[:photo],
-       description: params[:description],
-      
-     }
-   ).body
-   redirect_to "/capstone/#{@capstone['id']}"
+
+    def update
+     # @capstone = Unirest.patch(#{params[:id]}",
+       # parameters: {
+         # name: params[:sam],
+         # description: params[:description],
+         # url: params[:url], 
+         # student_id: params[:url]
+         
+        
+      # }
+    # ).body
+     redirect_to "/capstone/#{@capstone['id']}"
+   end
+
   end
-end
+

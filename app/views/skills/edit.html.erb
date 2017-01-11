@@ -1,0 +1,14 @@
+<%= form_tag "/students/skills/#{@skill.id}", method: :patch do %>
+
+  <% @skills.each do |skill| %>
+  <div class="form-group">
+  <%= label_tag :skill_name, 'Enter a skill ' %>
+  <%= text_field_tag :skill, skill.skill_name, class: 'form-control' %>
+  </div>
+   
+  
+  <% end %>
+  <div>
+  <%= submit_tag 'Submit skills!' %>
+  </div>
+  <% end %>

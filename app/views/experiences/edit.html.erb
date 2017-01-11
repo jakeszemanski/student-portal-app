@@ -1,0 +1,28 @@
+<%= form_tag "/students/experiences/#{@students.id}", method: :patch do %>
+
+  <% @experiences.each do |experience| %>
+  <div class="form-group">
+  <%= label_tag :start_date, 'Enter a start date: ' %>
+  <%= text_field_tag :start_date, experience.start_date, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+  <%= label_tag :end_date, 'Enter end date: ' %>
+  <%= text_field_tag :end_date, experience.end_date, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :job_title, 'Enter a job title: ' %>
+  <%= text_field_tag :job_title, experience.job_title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+  <%= label_tag :company_name, 'Enter company name: ' %>
+  <%= text_field_tag :company_name, experience.company_name, class: 'form-control' %>
+  </div>
+   <div class="form-group">
+  <%= label_tag :details, 'Enter details: ' %>
+  <%= text_field_tag :details, experience.details, class: 'form-control' %>
+  </div>
+  <% end %>
+  <div>
+  <%= submit_tag 'Submit experiences!' %>
+  </div>
+  <% end %>

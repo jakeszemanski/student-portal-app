@@ -1,16 +1,11 @@
 class ResumesController < ApplicationController
+  def show
 
-  def index 
-    @student = Unirest.get "A P I", {student["email"]=> session[:email]}
+    @experiences = Unirest.get("A P I", experiences["student_id"]=> session[:id]).body
+    @educations = Unirest.get("A P I", educations["student_id"]=> session[:id]).body
+    @skills = Unirest.get("A P I", skills["student_id"]=> session[:id]).body
+
+    render 'show.html.erb'
   end
-
-  def edit
-    @student = Unirest.get "A P I", {student["email"]=> session[:email]}
-  end
-
-  def update
-    
-  end
-
 end
 
